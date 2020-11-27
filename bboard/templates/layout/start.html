@@ -241,7 +241,7 @@
         <div class="row">
 
 
-            <section class="col-sm-7 section-contenu">
+            <section class="col-sm-7 section-content">
 
 
                 <a id="main-content"></a>
@@ -275,13 +275,13 @@
                                             <div class="home-search-buttons">
                                                 <div class="searchbutton-wrapper">
                                                     <a role="button" class="home-search-button right-search-button"
-                                                       href="ru/seller.html"
+                                                       href="{% url 'seller_page' %}"
                                                        onclick="dataLayer.push({'event':'gaEvent', 'eventCategory':'Homepage Buttons', 'eventAction':'WebAnalytics', 'eventLabel':'internal Click'});">Продавцу</a>
 
                                                 </div>
                                                 <div class="searchbutton-wrapper">
                                                     <a role="button" class="home-search-button left-search-button"
-                                                       href="ru/buyer.html"
+                                                       href="{% url 'buyer_page' %}"
                                                        onclick="dataLayer.push({'event':'gaEvent', 'eventCategory':'Homepage Buttons', 'eventAction':'Contact - Feeling Lucky', 'eventLabel':'internal Click'});">Покупателю</a>
                                                 </div>
 

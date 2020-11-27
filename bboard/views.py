@@ -19,19 +19,17 @@ class ArticleCreateView(CreateView):
         context['rubrics'] = Rubric.objects.all()
         return context
 
-
 def index(request):
-    articles = Article.objects.all()
-    rubrics = Rubric.objects.all()
-    context = {'articles':articles, 'rubrics':rubrics}
-    return render(request, 'bboard/index.html', context)
+    return render(request, 'bboard/index.html')
 
-def by_rubric(request, rubric_id):
-    articles = Article.objects.filter(rubric=rubric_id)
-    rubrics = Rubric.objects.all()
-    current_rubric = Rubric.objects.get(pk=rubric_id)
-    context = {'articles': articles, 'rubrics': rubrics,
-               'current_rubric': current_rubric
-               }
-    return render(request, 'bboard/by_rubric.html', context)
+def buyer_page(request):
+    return render(request, 'bboard/buyer.html')
 
+def seller_page(request):
+    return render(request, 'bboard/seller.html')
+
+def contact_page(request):
+    return render(request, 'bboard/contact.html')
+
+def ilyapiasetski_page(request):
+    return render(request, 'bboard/ilyapiasetski.html')

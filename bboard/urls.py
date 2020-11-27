@@ -16,11 +16,13 @@ Including another URLconf
 
 from django.urls import path
 
-from .views import index, by_rubric, ArticleCreateView
+from .views import buyer_page, seller_page, contact_page, ilyapiasetski_page,ArticleCreateView
 
 urlpatterns = [
     #path('add/', ArticleCreateView.as_view(), name='add'),
-    #path('<int:rubric_id>/', by_rubric, name='by_rubric'),
-    path('', index, name='index'),
+    path('ilyapiasetski/', ilyapiasetski_page, name='ilyapiasetski_page'),
+    path('contact/', contact_page, name='contact_page'),
+    path('buyer/', buyer_page, name='buyer_page'),
+    path('seller/', seller_page, name='seller_page'),
 
 ]
