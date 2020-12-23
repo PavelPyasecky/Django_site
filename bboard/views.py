@@ -33,3 +33,6 @@ def contact_page(request):
 
 def ilyapiasetski_page(request):
     return render(request, 'bboard/ilyapiasetski.html')
+
+def legal_notice_page(request):
+    return render(request, 'bboard/legal-notice.html')

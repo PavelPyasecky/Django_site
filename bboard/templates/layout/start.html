@@ -162,14 +162,14 @@
 
 
                         <div class="toplink">
-                            <a href="ru/contact.html">Google Резюме</a>
+                            <a href="{% url "contact_page" %}">Google Резюме</a>
                         </div>
                         <div class="menutoaction dropdown">
                             <img class=dropdown-toggle" data-toggle="dropdown" alt="search-glass"
                             src="{% static 'bboard/img/menubutton.png' %}">
                             <div class="dropdown-menu social-drop">
                                 <div class="pin-truc">
-                                    <img border="0" src="sites/all/themes/bootstrap_material/images/pin.png">
+                                    <img border="0" src="{% static "bboard/img/pin.png" %}">
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
@@ -181,14 +181,14 @@
                                     <div class="col-xs-4 social-element social-left">
                                         <a target="_blank" href="https://www.facebook.com/realt.classic/"><img
                                                 class="center-block social-logo" border="0" alt="Share on Facebook"
-                                                src="sites/all/themes/bootstrap_material/images/facebook.png">
+                                                src="{% static "bboard/img/facebook.png" %}">
                                             <p class="social-text">Facebook</p>
                                         </a>
                                     </div>
                                     <div class="col-xs-4 social-element">
                                         <a target="_blank" href="https://twitter.com/realt_classic"><img
                                                 class="center-block social-logo" border="0" alt="Share on Twitter"
-                                                src="sites/all/themes/bootstrap_material/images/twitter.png">
+                                                src="{% static "bboard/img/twitter.png" %}">
                                             <p class="social-text">Twitter</p>
                                         </a>
                                     </div>
@@ -196,7 +196,7 @@
                                         <a target="_blank"
                                            href="https://www.linkedin.com/in/илья-пясецкий-0347551bb/"><img
                                                 class="center-block social-logo" border="0" alt="Share on Linkedin"
-                                                src="sites/all/themes/bootstrap_material/images/linkedin.png">
+                                                src="{% static "bboard/img/linkedin.png" %}">
                                             <p class="social-text">LinkedIn</p>
                                         </a>
                                     </div>
@@ -207,14 +207,15 @@
                                         <a target="_blank"
                                            href="https://www.pinterest.ru/pyasecky2010ilya/_saved/">
                                            <img class="center-block social-logo" border="0" alt="Share on Pinterest"
-                                        src="sites/all/themes/bootstrap_material/images/pinterest.png">
+                                        src="{% static "bboard/img/pinterest.png" %}">
                                         <p class="social-text">Pinterest</p>
                                         </a>
                                     </div>
                                     <div class="col-xs-4 social-element">
-                                        <a target="_blank" href="ru/contact.html"><img class="center-block social-logo"
-                                                                                       border="0" alt="Share via Email"
-                                                                                       src="sites/all/themes/bootstrap_material/images/email.png">
+                                        <a target="_blank" href="ru/contact.html">
+                                            <img class="center-block social-logo"
+                                                 border="0" alt="Share via Email"
+                                                 src="{% static "bboard/img/email.png" %}">
                                             <p class="social-text">Email</p>
                                         </a>
                                     </div>
@@ -222,7 +223,7 @@
                             </div>
                         </div>
                         <div class="calltoaction">
-                            <p><a href="ru/contact.html">Контакты</a></p>
+                            <p><a href="{% url "contact_page" %}">Контакты</a></p>
                         </div>
 
                     </section>
@@ -241,7 +242,7 @@
         <div class="row">
 
 
-            <section class="col-sm-7 section-content">
+            <section class="col-sm-7 section-contenu">
 
 
                 <a id="main-content"></a>
@@ -329,8 +330,8 @@
 
 
             <ul class="menu nav">
-                <li class="first leaf"><a href="ru/contact.html" title="">Контакты</a></li>
-                <li class="last leaf"><a href="ru/legal-notice.html">О проекте</a></li>
+                <li class="first leaf"><a href="{% url "contact_page" %}" title="">Контакты</a></li>
+                <li class="last leaf"><a href="{% url "legal_notice_page" %}">О проекте</a></li>
             </ul>
         </section>
         <section id="block-block-15" class="block block-block clearfix">

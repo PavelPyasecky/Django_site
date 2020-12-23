@@ -1,4 +1,4 @@
-<!--{% load static %}-->
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr"
@@ -83,8 +83,8 @@
         <header class="navbar-search container">
             <div class="row">
                 <div class="navbar-logo">
-                    <a class="logo navbar-btn" href="../index.html" title="Home">
-                        <img src="../sites/default/files/logo-ilya_piasetski_5.png" alt="Home" />
+                    <a class="logo navbar-btn" href="{% url "index" %}" title="Home">
+                        <img src="{% static "bboard/img/logo-ilya_piasetski_5.png" %}" alt="Home" />
                     </a>
                 </div>
                 <div class="navbar-searchbar">
@@ -100,8 +100,8 @@
                                     </h1>
                                 </div>
                                 <div class="searchbutton">
-                                    <p><a href="contact.html">
-                                        <img alt="search-glass" src="../sites/all/themes/bootstrap_material/images/searchglass.png">
+                                    <p><a href="{% url "contact_page" %}">
+                                        <img alt="search-glass" src="{% static "bboard/img/searchglass.png" %}">
                                     </a></p>
                                 </div>
                             </div>
@@ -123,58 +123,78 @@
                     </div>
                 </div>
                 <div class="navbar-cta">
-                    <div class="region region-cta">
-                        <section id="block-block-14" class="block block-block clearfix">
-                            <div class="toplink">
-                                <a href="ilyapiasetski.html">Google Резюме</a>
-                            </div>
-                            <div class="menutoaction dropdown">
-                                <img class="dropdown-toggle" data-toggle="dropdown" alt="search-glass" src="../sites/all/themes/bootstrap_material/images/menubutton.png">
-                                <div class="dropdown-menu social-drop">
-                                    <div class="pin-truc">
-                                        <img border="0" src="../sites/all/themes/bootstrap_material/images/pin.png">
-                                    </div>
+                <div class="region region-cta">
+                    <section id="block-block-14" class="block block-block clearfix">
 
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <p class="social-text">Поделиться</p>
-                                        </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="col-xs-4 social-element social-left">
-                                            <a target="_blank" href="https://www.facebook.com/realt.classic/"><img class="center-block social-logo" border="0" alt="Share on Facebook" src="sites/all/themes/bootstrap_material/images/facebook.png">
-                                                <p class="social-text">Facebook</p></a>
-                                        </div>
-                                        <div class="col-xs-4 social-element">
-                                            <a target="_blank" href="https://twitter.com/realt_classic"><img class="center-block social-logo"  border="0" alt="Share on Twitter" src="sites/all/themes/bootstrap_material/images/twitter.png">
-                                                <p class="social-text">Twitter</p></a>
-                                        </div>
-                                        <div class="col-xs-4 social-element">
-                                            <a target="_blank" href="https://www.linkedin.com/in/илья-пясецкий-0347551bb/"><img class="center-block social-logo"  border="0" alt="Share on Linkedin" src="sites/all/themes/bootstrap_material/images/linkedin.png">
-                                                <p class="social-text">LinkedIn</p></a>
-                                        </div>
+                        <div class="toplink">
+                            <a href="{% url "contact_page" %}">Google Резюме</a>
+                        </div>
+                        <div class="menutoaction dropdown">
+                            <img class=dropdown-toggle" data-toggle="dropdown" alt="search-glass"
+                            src="{% static 'bboard/img/menubutton.png' %}">
+                            <div class="dropdown-menu social-drop">
+                                <div class="pin-truc">
+                                    <img border="0" src="{% static "bboard/img/pin.png" %}">
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <p class="social-text">Share</p>
                                     </div>
+                                </div>
 
-                                    <div class="row">
-                                        <div class="col-xs-4 social-element  social-left">
-                                            <a target="_blank" href="https://www.pinterest.ru/pyasecky2010ilya/_saved/"><img class="center-block social-logo"  border="0" alt="Share on Pinterest" src="sites/all/themes/bootstrap_material/images/pinterest.png">
-                                            <p class="social-text">Pinterest</p></a>
-                                        </div>
-                                        <div class="col-xs-4 social-element">
-                                            <a target="_blank" href="ru/contact.html"><img class="center-block social-logo"  border="0" alt="Share via Email" src="sites/all/themes/bootstrap_material/images/email.png">
-                                                <p class="social-text">Email</p></a>
-                                        </div>
+                                <div class="row">
+                                    <div class="col-xs-4 social-element social-left">
+                                        <a target="_blank" href="https://www.facebook.com/realt.classic/"><img
+                                                class="center-block social-logo" border="0" alt="Share on Facebook"
+                                                src="{% static "bboard/img/facebook.png" %}">
+                                            <p class="social-text">Facebook</p>
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-4 social-element">
+                                        <a target="_blank" href="https://twitter.com/realt_classic"><img
+                                                class="center-block social-logo" border="0" alt="Share on Twitter"
+                                                src="{% static "bboard/img/twitter.png" %}">
+                                            <p class="social-text">Twitter</p>
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-4 social-element">
+                                        <a target="_blank"
+                                           href="https://www.linkedin.com/in/илья-пясецкий-0347551bb/"><img
+                                                class="center-block social-logo" border="0" alt="Share on Linkedin"
+                                                src="{% static "bboard/img/linkedin.png" %}">
+                                            <p class="social-text">LinkedIn</p>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-4 social-element  social-left">
+                                        <a target="_blank"
+                                           href="https://www.pinterest.ru/pyasecky2010ilya/_saved/">
+                                           <img class="center-block social-logo" border="0" alt="Share on Pinterest"
+                                        src="{% static "bboard/img/pinterest.png" %}">
+                                        <p class="social-text">Pinterest</p>
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-4 social-element">
+                                        <a target="_blank" href="ru/contact.html">
+                                            <img class="center-block social-logo"
+                                                 border="0" alt="Share via Email"
+                                                 src="{% static "bboard/img/email.png" %}">
+                                            <p class="social-text">Email</p>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="calltoaction">
+                            <p><a href="{% url "contact_page" %}">Контакты</a></p>
+                        </div>
 
-                            <div class="calltoaction">
-                                <p><a href="contact.html">Контакты</a></p>
-                            </div>
-                        </section>
-                    </div>
+                    </section>
                 </div>
+            </div>
             </div>
         </header>
 
@@ -191,14 +211,16 @@
                 </div>
 
                 <div class="navbar-collapse collapse">
+                    {% block navigation %}
                     <nav role="navigation">
                         <ul class="menu nav navbar-nav">
-                            <li class="first leaf active-trail active"><a href="seller.html" class="active-trail active">Продавцу</a></li>
-                            <li class="leaf"><a href="buyer.html">Покупателю</a></li>
-                            <li class="leaf"><a href="ilyapiasetski.html">Google Резюме</a></li>
-                            <li class="last leaf"><a href="contact.html">Контакты</a></li>
+                            <li class="first leaf active-trail active"><a href="{% url "seller_page" %}" class="active-trail active">Продавцу</a></li>
+                            <li class="leaf"><a href="{% url "buyer_page" %}">Покупателю</a></li>
+                            <li class="leaf"><a href="{% url "ilyapiasetski_page" %}">Google Резюме</a></li>
+                            <li class="last leaf"><a href="{% url "contact_page" %}">Контакты</a></li>
                         </ul>
                     </nav>
+                    {% endblock %}
                 </div>
             </div>
         </header>
@@ -218,8 +240,8 @@
         <div class="region region-footer">
             <section id="block-menu-menu-footer-menu" class="block block-menu clearfix">
                 <ul class="menu nav">
-                    <li class="first leaf"><a href="contact.html" title="">контакты</a></li>
-                    <li class="last leaf"><a href="legal-notice.html">О проекте</a></li>
+                    <li class="first leaf"><a href="{% url "contact_page" %}" title="">контакты</a></li>
+                    <li class="last leaf"><a href="{% url "legal_notice_page" %}">О проекте</a></li>
                 </ul>
             </section>
             <section id="block-block-15" class="block block-block clearfix">
