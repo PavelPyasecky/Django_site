@@ -1,4 +1,5 @@
 {% extends "layout/basic.html" %}
+{% load static %}
 
 {% block navigation %}
     <nav role="navigation">
@@ -115,12 +116,13 @@
                     </section>
                 </div>
             </section>
+
             <aside class="col-sm-6 section-side-right" role="complementary">
                 <div class="region region-sidebar-second">
                     <section id="block-block-20" class="block block-block clearfix">
 
                         <p><img class="sidebar-image"
-                                src="../sites/all/themes/bootstrap_material/images/ilya_piasetski_google.png"/></p>
+                                src="{% static "bboard/img/ilya_piasetski_google.png" %}"/></p>
 
                     </section>
                     <section id="block-block-17" class="block block-block clearfix">
@@ -128,12 +130,12 @@
                         <h2 class="block-title">Контактная информация</h2>
 
                         <div id="resultStats">Пясецкий Илья Денисович</div>
-                        <p><strong>Компания:</strong>"ООО Центр Недвижимости "Ситилэнд"</p>
-                        <p><strong>Зона работы: </strong>Минск и Минская область</p>
-                        <p><strong>Адрес:</strong> <a href="https://yandex.by/profile/43136418023" target="_blank">Площадь
+                        <p><strong>Компания:</strong> "ООО Центр Недвижимости "Ситилэнд"</p>
+                        <p><strong>Зона работы:</strong> Минск и Минская область</p>
+                        <p><strong>Адрес:</strong><a href="https://yandex.by/profile/43136418023" target="_blank">Площадь
                             Свободы 8, - Минск, Беларусь</a></p>
                         <p><strong>Телефон:</strong><img alt=""
-                                                         src="../sites/all/themes/bootstrap_material/images/phone3.gif"
+                                                         src="{% static "bboard/img/phone3.gif" %}"
                                                          style="height:30px; margin-top:-3px; width:150px"/></p>
 
                     </section>
@@ -142,14 +144,14 @@
                         <h2 class="block-title">Социальные сети</h2>
 
                         <ul class="menu nav">
-                            <li class="first leaf"><a href="https://www.linkedin.com/in/garylemasson"
-                                                      title="Gary Le Masson - Linkedin" target="_blank">Linkedin</a>
+                            <li class="first leaf"><a href="https://www.linkedin.com/in/илья-пясецкий-0347551bb/"
+                                                      title="Ilya Piasetski - Linkedin" target="_blank">Linkedin</a>
                             </li>
-                            <li class="leaf"><a href="https://github.com/garylemasson" target="_blank">GitHub</a></li>
-                            <li class="leaf"><a href="https://www.instagram.com/garyzpics/"
-                                                title="Gary Le Masson Instagram" target="_blank">Instagram</a></li>
-                            <li class="last leaf"><a href="https://twitter.com/garylemasson"
-                                                     title="Gary Le Masson - Twitter" target="_blank">Twitter</a></li>
+                            <li class="leaf"><a href="https://www.facebook.com/realt.classic/" target="_blank">Facebook</a></li>
+                            <li class="leaf"><a href="https://vk.com/id358398208"
+                                                title="Ilya Piasetski - ВКонтакте" target="_blank">ВКонтакте</a></li>
+                            <li class="last leaf"><a href="https://twitter.com/realt_classic"
+                                                     title="Ilya Piasetski - Twitter" target="_blank">Twitter</a></li>
                         </ul>
                     </section>
                 </div>
