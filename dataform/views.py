@@ -11,17 +11,9 @@ class DataFormView(View):
         return render(request, 'form.html', {'form': form})
 
     def post(self, request):
-        name = request.POST.get('name')
-        phone = request.POST.get('phone')
-        email = request.POST.get('email')
-        mes = request.POST.get('mes')
-        file = request.FILES.get('file')
-        content = file.read()
-        context = {
-            'name': name,
-            'phone': phone,
-            'email': email,
-            'mes': mes,
-            'file': content,
-        }
-        return render(request, 'form.html', context)
+        form = DataForm(request.POST)
+        if form.is_valid():
+            context = form.cleaned_data
+            return render(request, 'form.html', context)
+        else:
+            return render(request, 'error.html', {'error': form.errors})
