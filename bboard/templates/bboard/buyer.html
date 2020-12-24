@@ -35,16 +35,16 @@
                                             <h2>Первый действия</h2>
                                             <div class="row">
                                                 <div class="col-xs-4 text-center">
-                                                    <img src="../sites/default/files/pictures/google_tag_manager_logo1.svg"
-                                                         alt="Google Tag Manager" width="60%"/><h4>Параметры жилья</h4>
+                                                    <img src="{% static "bboard/img/nice_house_logo.svg" %}"
+                                                         alt="Google Tag Manager" width="62%"/><h4>Параметры жилья</h4>
                                                 </div>
                                                 <div class="col-xs-4 text-center">
-                                                    <img src="../sites/default/files/pictures/google_analytics_logo1.svg"
-                                                         alt="Google Analytics" width="53.7%"/><h4>Ваши возможности</h4>
+                                                    <img src="{% static "bboard/img/opportunities_logo.svg" %}"
+                                                         alt="Google Analytics" width="60%"/><h4>Ваши возможности</h4>
                                                 </div>
                                                 <div class="col-xs-4 text-center" style="font-size:2vw;">
-                                                    <img src="../sites/default/files/pictures/google_data_studio_logo1.svg"
-                                                         alt="Google Data Studio" width="65%"/><h4>Варианты сделок</h4>
+                                                    <img src="{% static "bboard/img/variants_logo.svg" %}"
+                                                         alt="Google Data Studio" width="68%"/><h4>Варианты сделок</h4>
                                                 </div>
                                             </div>
                                             <div class="grey-txt">Описание</div>
@@ -89,7 +89,7 @@
                                             <h2>Как продвигается покупка?</h2>
                                             <p>Я как эксперт всегда буду рад вам помочь</p>
 
-                                            <div class="calltoaction"><a href="contact.html">Лучше позвоню Илье!!</a>
+                                            <div class="calltoaction"><a href="{% url "contact_page" %}">Лучше позвоню Илье!!</a>
                                             </div>
                                         </div>
                                     </div>

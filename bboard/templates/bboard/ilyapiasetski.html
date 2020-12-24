@@ -34,72 +34,32 @@
                                             область). Фото с довольными клиентами.
                                         </div>
                                         <div class="well">
-                                            <h3><a href="ilyapiasetski.html">Фото с довольными клиентами |
-                                                Рекомендации</a></h3>
+                                            <h3 style="font-size: 120% ;">Фото с довольными клиентами |
+                                                Рекомендации</h3>
 
                                             <div class="table">
                                                 <div class="table__cell">
-                                                    <img style="padding-right: 10px;padding-top: 10px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_1.jpg"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_2.JPG"
+                                                    <img style="padding-right: 10px;padding-top: 10px; border: peachpuff; border-width: thin; border-image: {% static "bboard/img/facebook.png" %} 10 round round;"
+                                                         src="{% static "bboard/img/Happy_clients_2.JPG" %}"
                                                          alt=""/>
                                                     <img style="padding-right: 10px;padding-top: 10px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_16.jpg"
+                                                         src="{% static "bboard/img/Happy_clients_4.JPG" %}"
                                                          alt=""/>
                                                     <img style="padding-right: 10px;padding-top: 10px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_17.jpg"
+                                                         src="{% static "bboard/img/Happy_clients_5.jpg" %}"
                                                          alt=""/>
                                                     <img style="padding-right: 10px;padding-top: 10px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_3.JPG"
+                                                         src="{% static "bboard/img/Happy_clients_3.JPG" %}"
                                                          alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_4.jpg"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_5.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_6.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_7.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_8.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_9.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_10.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_11.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_12.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_13.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_14.jpg"
-                                                         alt=""/>
+
                                                 </div>
                                             </div>
 
-                                            <div class="well associated-search">
-                                                <h3>Перейти к другой информации</h3>
-                                                <p><a href="buyer.html">Покупателю</a></p>
-                                                <p><a href="seller.html">Продавцу</a></p>
-                                                <p><a href="">Google Резюме</a></p>
-                                            </div>
+
                                             <div class="top-well">
                                                 <h2>Готов приступить к работе, решить вашу задачу.</h2>
                                                 <p>Мы можем поработать вместе?</p>
-                                                <div class="calltoaction"><a href="contact.html">Контакты</a></div>
+                                                <div class="calltoaction"><a href="{% url "contact_page" %}">Контакты</a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -110,10 +70,10 @@
                     </section>
                     <section id="block-block-9" class="block block-block clearfix">
 
-                        <p><a href="contact.html">
+                        <p><a href="{% url "contact_page" %}">
                             <img alt=""
-                                 src="../sites/all/themes/bootstrap_material/images/realtor1.gif"
-                                 style="display:block; height:65px; margin-bottom:30px; margin-left:auto; margin-right:auto; width:296px"/></a>
+                                 src="{% static "bboard/img/moving_house.gif" %}"
+                                 style="display:block; margin-bottom:30px; margin-left:auto; margin-right:auto; width:50%"/></a>
                         </p>
 
                     </section>
