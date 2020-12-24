@@ -6,9 +6,31 @@
 </head>
 <body>
     <h1>Форма отзыва</h1>
-    <form method="post" action="/form/">
-        <label for="feedback-text">Отзыв:</label>
-        <input id="feedback-text" type="text" name="text">
+    <form method="post" enctype="multipart/form-data" action="/form/">
+        {% csrf_token %}
+        <label for="feedback-name">Имя:</label>
+        <input id="feedback-name" type="text" name="name" required>
+        <br>
+        <label for="feedback-email">Email:</label>
+        <input id="feedback-email" type="text" name="email" required>
+        <br>
+        <label for="feedback-phone">Телефон:</label>
+        <input id="feedback-phone" type="text" name="phone" required>
+        <br>
+        <label for="feedback-mes">Сообщение:</label>
+        <input id="feedback-mes" type="text" name="mes" minlength="3" maxlength="128" required>
+        <br>
+        <label for="feedback-file">Материалы:</label>
+        <input id="feedback-file" type="file" name="file">
+
+        <input id="feedback-submit" type="submit">
+
+
+        {{ name }}
+        {{ phone }}
+        {{ email }}
+        {{ mes }}
+        {{ file }}
     </form>
 </body>
 </html>
