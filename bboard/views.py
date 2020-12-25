@@ -9,6 +9,7 @@ from .models import Rubric
 
 from .forms import ArticleForm
 
+
 class ArticleCreateView(CreateView):
     template_name = 'bboard/create.html'
     form_class = ArticleForm
@@ -29,7 +30,7 @@ def seller_page(request):
     return render(request, 'bboard/seller.html')
 
 def contact_page(request):
-    return render(request, 'bboard/contact.html')
+    return render(request, 'd')
 
 def ilyapiasetski_page(request):
     return render(request, 'bboard/ilyapiasetski.html')

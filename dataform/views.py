@@ -3,11 +3,12 @@ from django.shortcuts import render
 from django.views import View
 from .forms import DataForm
 
+usermessage = 'Здравствуйте, Илья! Хочу с Вами связаться по поводу недвижимости. Жду Вашего звонка!'
 
 class DataFormView(View):
 
     def get(self, request):
-        form = DataForm()
+        form = DataForm(initial={'mes': usermessage})
         return render(request, 'form.html', {'form': form})
 
     def post(self, request):
