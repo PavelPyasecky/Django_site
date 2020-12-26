@@ -9,12 +9,12 @@ class DataFormView(View):
 
     def get(self, request):
         form = DataForm(initial={'mes': usermessage})
-        return render(request, 'form.html', {'form': form})
+        return render(request, 'dataform/form.html', {'form': form})
 
     def post(self, request):
         form = DataForm(request.POST)
         if form.is_valid():
             context = form.cleaned_data
-            return render(request, 'form.html', context)
+            return render(request, 'dataform/form.html', context)
         else:
-            return render(request, 'error.html', {'error': form.errors})
+            return render(request, 'dataform/error.html', {'error': form.errors})
