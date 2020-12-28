@@ -21,9 +21,9 @@ class DataForm(forms.Form):
                           )
     file = forms.FileField(label="Материалы",
                            required=False,
-                           widget=forms.ClearableFileInput(attrs={"class": "", "id": "edit-submitted-file"})
+                           widget=forms.FileInput(attrs={"class": "", "id": "edit-submitted-file"})
                            )
 
-    def clean_phone(self):
-        if "+375" or "80" not in self.cleaned_data['phone']:
-            raise forms.ValidationError('Используйте полный формат записи телефонного номера.')
+    # def clean_phone(self):
+    #     if "+375" not in self.cleaned_data['phone'] or "80" not in self.cleaned_data['phone']:
+    #         raise forms.ValidationError('Используйте полный формат записи телефонного номера.')

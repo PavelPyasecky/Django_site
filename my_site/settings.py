@@ -123,3 +123,11 @@ SHORT_DATETIME_FORMAT = 'j.m.Y H:i'
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.mail.ru')
+EMAIL_PORT = os.getenv('EMAIL_PORT', 465)
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_RECEPIENT = os.getenv('EMAIL_RECEPIENT')
+EMAIL_USE_SSL = os.getenv('EMAIL_USE_SSL', True)
+
