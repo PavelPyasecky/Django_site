@@ -21,7 +21,7 @@ class DataForm(forms.Form):
                           )
     file = forms.FileField(label="Материалы",
                            required=False,
-                           widget=forms.FileInput(attrs={"class": "", "id": "edit-submitted-file"})
+                           widget=forms.FileInput(attrs={ "id": "edit-submitted-file"})
                            )
 
     # def clean_phone(self):
