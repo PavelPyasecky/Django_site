@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html>
 <head>
@@ -16,7 +17,7 @@
                         <tr>
                             <td>
                                 <a href="" style="display:block; width:407px; height:100px; margin:0 auto 30px;">
-                                    <img src="../../static/img/logo.png" width="407" height="100" alt="Pixelbuddha" style="display:block; border:0; margin:0;">
+                                    <img src="{% static "dataform/img/logo.png" %}" width="407" height="100" alt="Pixelbuddha" style="display:block; border:0; margin:0;">
                                 </a>
                                 <p style="margin:0 0 36px; text-align:center; font-size:14px; line-height:20px; text-transform:uppercase; color:#626658;">
                                     what is the most fascinating thing about summer?
@@ -34,7 +35,7 @@
                                             <td width="4" height="4" style="background:url(../img/shadow-left-top.png) no-repeat 100% 0;"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
                                             <td colspan="3" rowspan="3" bgcolor="#FFFFFF" style="padding:0 0 30px;">
                                                 <!-- begin content -->
-                                                <img src="../../static/img/header.jpg" width="600" height="400" alt="summer‘s coming trimm your sheeps" style="display:block; border:0; margin:0 0 44px; background:#eeeeee;">
+                                                <img src="{% static "dataform/img/header.jpg" %}" width="600" height="400" alt="summer‘s coming trimm your sheeps" style="display:block; border:0; margin:0 0 44px; background:#eeeeee;">
                                                 <p style="margin:0 30px 33px;; text-align:center; text-transform:uppercase; font-size:24px; line-height:30px; font-weight:bold; color:#484a42;">
                                                     Best articles in this month
                                                 </p>
@@ -44,13 +45,13 @@
                                                         <tr valign="top">
                                                             <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
                                                             <td>
-                                                                <a style="display:block; margin:0 0 14px;" href=""><img src="../../static/img/article.jpg" width="255" height="150" alt="More" style="display:block; margin:0; border:0; background:#eeeeee;"></a>
+                                                                <a style="display:block; margin:0 0 14px;" href=""><img src="../../static/dataform/img/article.jpg" width="255" height="150" alt="More" style="display:block; margin:0; border:0; background:#eeeeee;"></a>
                                                                 <p style="font-size:14px; line-height:22px; font-weight:bold; color:#333333; margin:0 0 5px;"><a href="" style="color:#6c7e44; text-decoration:none;">What is it like to be young and free minded in North Korea</a></p>
                                                                 <p style="margin:0 0 35px; font-size:12px; line-height:18px; color:#333333;">Fusce amet ligula ornare tempus vulputate ipsum semper. Praesent non lorem odio. Fusce sed dui massa, eu viverra erat.</p>
                                                             </td>
                                                             <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
                                                             <td>
-                                                                <a style="display:block; margin:0 0 14px;" href="#"><img src="../../static/img/article2.jpg" width="255" height="150" alt="More" style="display:block; margin:0; border:0; background:#eeeeee;"></a>
+                                                                <a style="display:block; margin:0 0 14px;" href="#"><img src="../../static/dataform/img/article2.jpg" width="255" height="150" alt="More" style="display:block; margin:0; border:0; background:#eeeeee;"></a>
                                                                 <p style="font-size:14px; line-height:22px; font-weight:bold; color:#333333; margin:0 0 5px;"><a href="#" style="color:#6c7e44; text-decoration:none;">What is it like to be young and free minded in North Korea</a></p>
                                                                 <p style="margin:0 0 35px; font-size:12px; line-height:18px; color:#333333;">Fusce amet ligula ornare tempus vulputate ipsum semper. Praesent non lorem odio. Fusce sed dui massa, eu viverra erat.</p>
                                                             </td>
@@ -59,12 +60,33 @@
                                                         <tr valign="top">
                                                             <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
                                                             <td colspan="3">
-                                                                <a style="display:block; margin:0 0 14px;" href="#"><img src="../../static/img/full.jpg" width="540" height="220" alt="More" style="display:block; margin:0; border:0; background:#eeeeee;"></a>
+                                                                <a style="display:block; margin:0 0 14px;" href="#"><img src="../../static/dataform/img/full.jpg" width="540" height="220" alt="More" style="display:block; margin:0; border:0; background:#eeeeee;"></a>
                                                                 <p style="font-size:14px; line-height:22px; font-weight:bold; color:#333333; margin:0 0 5px;"><a href="#" style="color:#6c7e44; text-decoration:none;">What is it like to be young and free minded in North Korea</a></p>
                                                                 <p style="margin:0 0 35px; font-size:12px; line-height:18px; color:#333333;">Fusce amet ligula ornare tempus vulputate ipsum semper. Praesent non lorem odio. Fusce sed dui massa, eu viverra erat.</p>
                                                             </td>
+
                                                             <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
                                                         </tr>
+                                                        <div>
+                                                            {% for item in file %}
+                                                                <tr valign="top">
+                                                                    <td width="30"><p
+                                                                            style="margin:0; font-size:1px; line-height:1px;">
+                                                                        &nbsp;</p></td>
+                                                                    <td colspan="3">
+                                                                        <a style="display:block; margin:0 0 14px;"
+                                                                           href="#"><img
+                                                                                src={% static "{{item.file}}" %} width="540"
+                                                                                height="220" alt="More"
+                                                                                style="display:block; margin:0; border:0; background:#eeeeee;"></a>
+                                                                        <p>Hey, It's me!</p>
+                                                                    </td>
+                                                                    <td width="30"><p
+                                                                            style="margin:0; font-size:1px; line-height:1px;">
+                                                                        &nbsp;</p></td>
+                                                                </tr>
+                                                            {% endfor %}
+                                                        </div>
                                                     </tbody>
                                                 </table>
                                                 <!-- /end articles -->
@@ -84,16 +106,16 @@
                                                             <td width="30"><p style="margin:0; font-size:1px; line-height:1px;">&nbsp;</p></td>
                                                             <td width="120">
                                                                 <a href="" style="float:left; width:24px; height:24px; margin:6px 8px 10px 0;">
-                                                                    <img src="../../static/img/facebook.png" width="24" height="24" alt="facebook" style="display:block; margin:0; border:0; background:#eeeeee;">
+                                                                    <img src="../../static/dataform/img/facebook.png" width="24" height="24" alt="facebook" style="display:block; margin:0; border:0; background:#eeeeee;">
                                                                 </a>
                                                                 <a href="" style="float:left; width:24px; height:24px; margin:6px 8px 10px 0;">
-                                                                    <img src="../../static/img/twitter.png" width="24" height="24" alt="twitter" style="display:block; margin:0; border:0; background:#eeeeee;">
+                                                                    <img src="../../static/dataform/img/twitter.png" width="24" height="24" alt="twitter" style="display:block; margin:0; border:0; background:#eeeeee;">
                                                                 </a>
                                                                 <a href="" style="float:left; width:24px; height:24px; margin:6px 8px 10px 0;;">
-                                                                    <img src="../../static/img/tumblr.png" width="24" height="24" alt="tumblr" style="display:block; margin:0; border:0; background:#eeeeee;">
+                                                                    <img src="../../static/dataform/img/tumblr.png" width="24" height="24" alt="tumblr" style="display:block; margin:0; border:0; background:#eeeeee;">
                                                                 </a>
                                                                 <a href="" style="float:left; width:24px; height:24px; margin:6px 0 10px 0;">
-                                                                    <img src="../../static/img/rss.png" width="24" height="24" alt="rss" style="display:block; margin:0; border:0; background:#eeeeee;">
+                                                                    <img src="../../static/dataform/img/rss.png" width="24" height="24" alt="rss" style="display:block; margin:0; border:0; background:#eeeeee;">
                                                                 </a>
                                                                 <p style="margin:0; font-weight:bold; clear:both; font-size:12px; line-height:22px;">
                                                                     <a href="#" style="color:#6d7e44; text-decoration:none;">Visit website</a><br>

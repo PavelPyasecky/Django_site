@@ -124,6 +124,10 @@ SHORT_DATETIME_FORMAT = 'j.m.Y H:i'
 
 STATIC_URL = '/static/'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
 EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.mail.ru')
 EMAIL_PORT = os.getenv('EMAIL_PORT', 465)
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')

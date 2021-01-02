@@ -19,9 +19,9 @@ class DataForm(forms.Form):
     mes = forms.CharField(label="Сообщение",
                           widget=forms.Textarea(attrs={"class": "form-control form-textarea required", "id": "edit-submitted-message", "cols":"60", "rows":"5"})
                           )
-    file = forms.FileField(label="Материалы",
+    image = forms.ImageField(label="Изображения",
                            required=False,
-                           widget=forms.FileInput(attrs={ "id": "edit-submitted-file"})
+                           widget=forms.FileInput(attrs={'multiple': 'multiple', "id": "edit-submitted-file"})
                            )
 
     # def clean_phone(self):

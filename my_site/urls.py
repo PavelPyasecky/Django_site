@@ -18,9 +18,15 @@ from django.urls import path, include
 
 from bboard.views import index
 
+from django.conf import settings # new
+from django.conf.urls.static import static # new
+
 urlpatterns = [
     path('', index),
     path('bboard/', include('bboard.urls')),
     path('admin/', admin.site.urls),
     path('form/', include('dataform.urls')),
 ]
+
+if settings.DEBUG: # new
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

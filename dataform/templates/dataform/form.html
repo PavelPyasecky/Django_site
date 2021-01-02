@@ -84,8 +84,8 @@
 
 
                                     <div class="form-item webform-component webform-component-textfield webform-component--name form-group form-item form-item-submitted-name form-type-textfield form-group">
-                                        <label class="control-label" name="userfile" for={{ form.file.id_for_label }}>Материалы </label>
-                                        {{ form.file }}
+                                        <label class="control-label" name="userfile" for={{ form.image.id_for_label }}>Изображения </label>
+                                        {{ form.image }}
                                     </div>
 
 
@@ -105,7 +105,18 @@
                                         <script type="text/jаvascript" src="bootstrap.js"></script>
                                     </div>
                                     <p> <br></p>
-                                    {{ context.name }}
+                                    <p>{{ name }}</p>
+                                    <p>{{ email }}</p>
+                                    <p>{{ phone }}</p>
+                                    <p>{{ mes }}</p>
+
+                                    <div align="center">
+                                        {% if image %}
+                                            {% for item in image %}
+                                                <img src="{{ MEDIA_URL }}{{ item.image.url }}">
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
 
                                 </div>
                             </form>
