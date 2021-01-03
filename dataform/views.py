@@ -55,8 +55,6 @@ class DataFormView(View):
                     'image': last.images.all()
                 }
 
-                print(image[0].content_type)
-
 
                 html_body = render_to_string('dataform/email.html', data)
                 msg = EmailMultiAlternatives(subject="Feedback - mrealt.by", from_email=settings.EMAIL_HOST_USER,
@@ -86,4 +84,4 @@ class DataFormView(View):
 
         else:
             form_new = DataForm(request.POST, request.FILES)
-            return render(request, 'dataform/email.html', {'form': form_new, 'error': form.errors, 'form_window': True})
+            return render(request, 'dataform/form.html', {'form': form_new, 'error': form.errors, 'form_window': True})

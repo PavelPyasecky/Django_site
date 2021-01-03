@@ -16,7 +16,7 @@ Including another URLconf
 
 from django.urls import path
 
-from .views import buyer_page, seller_page, contact_page, ilyapiasetski_page, legal_notice_page, index
+from .views import buyer_page, seller_page, ilyapiasetski_page, legal_notice_page, index
 from dataform.views import DataFormView
 
 urlpatterns = [

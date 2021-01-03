@@ -29,9 +29,6 @@ def buyer_page(request):
 def seller_page(request):
     return render(request, 'bboard/seller.html')
 
-def contact_page(request):
-    return render(request, 'bboard/contact.html')
-
 def ilyapiasetski_page(request):
     return render(request, 'bboard/ilyapiasetski.html')
 
