@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                            {% if form_window %}
                             <form class="webform-client-form webform-client-form-123" id="webform-client-form-123" action="/form/"
                                   enctype="multipart/form-data" method="post"
                                   accept-charset="UTF-8">
@@ -54,6 +54,9 @@
                                                     class="form-required"
                                                     title="This field is required.">*</span></label>
                                         {{ form.name }}
+                                        {% if error %}
+                                            <div class="form-errors" >{{ error.name }}</div>
+                                        {% endif %}
                                     </div>
 
                                     <div class="form-item webform-component webform-component-textfield webform-component--name form-group form-item form-item-submitted-name form-type-textfield form-group">
@@ -62,6 +65,9 @@
                                                     class="form-required"
                                                     title="This field is required.">*</span></label>
                                         {{ form.email }}
+                                        {% if error %}
+                                            <div class="form-errors" >{{ error.email }}</div>
+                                        {% endif %}
                                     </div>
 
                                     <div class="form-item webform-component webform-component-textfield webform-component--name form-group form-item form-item-submitted-name form-type-textfield form-group">
@@ -70,6 +76,9 @@
                                                     class="form-required"
                                                     title="This field is required.">*</span></label>
                                         {{ form.phone }}
+                                        {% if error %}
+                                            <div class="form-errors" >{{ error.phone }}</div>
+                                        {% endif %}
                                     </div>
 
                                     <div class="form-item webform-component webform-component-textfield webform-component--name form-group form-item form-item-submitted-name form-type-textfield form-group">
@@ -79,6 +88,9 @@
                                                     title="This field is required.">*</span></label>
                                         <div class="form-textarea-wrapper resizable">
                                             {{ form.mes }}
+                                            {% if error %}
+                                                <div class="form-errors">{{ error.mes }}</div>
+                                            {% endif %}
                                         </div>
                                     </div>
 
@@ -86,6 +98,9 @@
                                     <div class="form-item webform-component webform-component-textfield webform-component--name form-group form-item form-item-submitted-name form-type-textfield form-group">
                                         <label class="control-label" name="userfile" for={{ form.image.id_for_label }}>Изображения </label>
                                         {{ form.image }}
+                                        {% if error %}
+                                            <div class="form-errors" >{{ error.image }}</div>
+                                        {% endif %}
                                     </div>
 
 
@@ -104,23 +119,32 @@
                                         </button>
                                         <script type="text/jаvascript" src="bootstrap.js"></script>
                                     </div>
-                                    <p> <br></p>
-                                    <p>{{ name }}</p>
-                                    <p>{{ email }}</p>
-                                    <p>{{ phone }}</p>
-                                    <p>{{ mes }}</p>
-
-                                    <div align="center">
-                                        {% if image %}
-                                            {% for item in image %}
-                                                <img src="{{ MEDIA_URL }}{{ item.image.url }}">
-                                            {% endfor %}
-                                        {% endif %}
-                                    </div>
 
                                 </div>
                             </form>
+                            {% endif %}
 
+
+                            <div align="center">
+                                {% if image %}
+                                    {% for item in image %}
+                                        <img src="{{ MEDIA_URL }}{{ item.image.url }}">
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+
+                            <div align="center">
+                                {% if alarm %}
+                                    <h3 class="block-title">{{ alarm.0 }}</h3>
+                                    <h3 class="block-title">{{ alarm.1 }}</h3>
+                                {% endif %}
+                            </div>
+
+                            <div align="center">
+                                {% if success %}
+                                    <h3 class="block-title">{{ success }}</h3>
+                                {% endif %}
+                            </div>
 
                         </article>
 

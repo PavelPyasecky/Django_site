@@ -1097,3 +1097,7 @@ aside h2 {
 	text-decoration: none;
 	color: #ffffff;
 }
+
+.form-errors {
+	color: #e35720;
+}
