@@ -1,4 +1,17 @@
 {% extends "layout/basic.html" %}
+{% load static %}
+
+{% block navigation %}
+    <nav role="navigation">
+        <ul class="menu nav navbar-nav">
+            <li class="first leaf"><a href="{% url "seller_page" %}">Продавцу</a>
+            </li>
+            <li class="leaf active-trail active" id="btn-navbar"><a href="{% url "buyer_page" %}" class="active-trail active">Покупателю</a></li>
+            <li class="leaf"><a href="{% url "ilyapiasetski_page" %}">Google Резюме</a></li>
+            <li class="last leaf"><a href="{% url "contact_page" %}">Контакты</a></li>
+        </ul>
+    </nav>
+{% endblock %}
 
 {% block content %}
     <div class="main-container container">
@@ -22,16 +35,16 @@
                                             <h2>Первый действия</h2>
                                             <div class="row">
                                                 <div class="col-xs-4 text-center">
-                                                    <img src="../sites/default/files/pictures/google_tag_manager_logo1.svg"
-                                                         alt="Google Tag Manager" width="60%"/><h4>Параметры жилья</h4>
+                                                    <img src="{% static "bboard/img/nice_house_logo.svg" %}"
+                                                         alt="Google Tag Manager" width="62%"/><h4>Параметры жилья</h4>
                                                 </div>
                                                 <div class="col-xs-4 text-center">
-                                                    <img src="../sites/default/files/pictures/google_analytics_logo1.svg"
-                                                         alt="Google Analytics" width="53.7%"/><h4>Ваши возможности</h4>
+                                                    <img src="{% static "bboard/img/opportunities_logo.svg" %}"
+                                                         alt="Google Analytics" width="60%"/><h4>Ваши возможности</h4>
                                                 </div>
                                                 <div class="col-xs-4 text-center" style="font-size:2vw;">
-                                                    <img src="../sites/default/files/pictures/google_data_studio_logo1.svg"
-                                                         alt="Google Data Studio" width="65%"/><h4>Варианты сделок</h4>
+                                                    <img src="{% static "bboard/img/variants_logo.svg" %}"
+                                                         alt="Google Data Studio" width="68%"/><h4>Варианты сделок</h4>
                                                 </div>
                                             </div>
                                             <div class="grey-txt">Описание</div>
@@ -76,7 +89,7 @@
                                             <h2>Как продвигается покупка?</h2>
                                             <p>Я как эксперт всегда буду рад вам помочь</p>
 
-                                            <div class="calltoaction"><a href="contact.html">Лучше позвоню Илье!!</a>
+                                            <div class="calltoaction"><a href="{% url "contact_page" %}">Лучше позвоню Илье!!</a>
                                             </div>
                                         </div>
                                     </div>
@@ -89,47 +102,49 @@
             </section>
 
             <aside class="col-sm-6 section-side-right" role="complementary">
-                <div class="region region-sidebar-second">
-                    <section id="block-block-27" class="block block-block clearfix">
 
-                        <p><a href="https://yandex.by/profile/43136418023" target="_blank">
-                            <img class="sidebar-image" src="../sites/all/themes/bootstrap_material/images/google-data-studio-demo1.png"/></a>
-                        </p>
+            <div class="region region-sidebar-second">
+                <section id="block-block-27" class="block block-block clearfix">
+                    <p><a href="https://yandex.by/profile/43136418023" target="_blank">
+                        <img class="sidebar-image"
+                             src="{% static "bboard/img/yandex_map.png" %}"/>
+                    </a></p>
+                </section>
+                <section id="block-block-25" class="block block-block clearfix">
+                    <h2 class="block-title">Пясецкий Илья Денисович</h2>
+                    <div id="resultStats">Риэлтер</div>
+                    <p>Вы хотите получить максимальную отдачу от своего объекта недвижимости? Свяжитесь со
+                        мной
+                        <a href="{% url "contact_page" %}"> - мои контакты</a> , я смогу оценить вашу ситуацию и
+                        сделать вам предложение.</p>
+                    <p><strong>Расположение :</strong>Площадь Свободы 8 - Беларусь, Минск</p>
+                    <p><strong>Профессия :</strong>Риэлтер / эксперт рынка недвижимости</p>
+                    <p><strong>Специализация:</strong><a
+                            href="https://zen.yandex.ru/media/id/5f0ac5bee281700c81dedaac/ia-b-v-rieltory-poshela-kto-takoi-rieltor-5f3b84829ed1b63a4bfc77a3">Продажа
+                        - подбор - обмен жилой
+                        недвижимости</a></p>
+                </section>
 
-                    </section>
+                <section id="block-menu-menu-outils-webanalytics" class="block block-menu clearfix">
+                    <h2 class="block-title">Полезные файлы:</h2>
+                    <ul class="menu nav">
+                        <li class="first leaf">
+                            <a href="http://samsebeyurist.by/zhile-i-nedvizhimost/kak-kupit-nedvizhimost"
+                               rel="nofollow">Пошаговое руководство для
+                                продажи недвижимости</a></li>
+                    </ul>
+                </section>
 
-                    <section id="block-block-25" class="block block-block clearfix">
-
-                        <h2 class="block-title">Пясецкий Илья Денисович</h2>
-
-                        <div id="resultStats">Риэлтер</div>
-                        <p>Вы хотите получить максимальную отдачу от своего объекта недвижимости? Свяжитесь со мной<a
-                                href="contact.html"> - мои контакты</a> , я смогу оценить вашу ситуацию и сделать вам
-                            предложение.</p>
-                        <p><strong>Расположение :</strong>Площадь Свободы 8 - Беларусь, Минск</p>
-                        <p><strong>Профессия :</strong>Риэлтер / эксперт рынка недвижимости</p>
-                        <p><strong>Специализация:</strong><a href="/ru/buyer.html">Продажа - подбор - обмен жилой
-                            недвижимости</a></p>
-
-                    </section>
-                    <section id="block-menu-menu-outils-webanalytics" class="block block-menu clearfix">
-
-                        <h2 class="block-title">Полезные файлы:</h2>
-                        <ul class="menu nav">
-                            <li class="first leaf"><a href="../en/webanalytics.html" rel="nofollow">Пошаговое
-                                руководство для покупки недвижимости</a></li>
-                        </ul>
-                    </section>
-                    <section id="block-menu-menu-blogs-analytics" class="block block-menu clearfix">
-
-                        <h2 class="block-title">Почему работать со мной?</h2>
-                        <ul class="menu nav">
-                            <li class="first last leaf"><a href="" target="_blank">Можно говорить что угодно, НО
-                                увидеть, это совсем другое</a></li>
-                        </ul>
-                    </section>
-                </div>
-            </aside>  <!-- /#sidebar-second -->
+                <section id="block-menu-menu-blogs-analytics" class="block block-menu clearfix">
+                    <h2 class="block-title">Почему работать со мной?</h2>
+                    <ul class="menu nav">
+                        <li class="first last leaf"><a href="{% url "ilyapiasetski_page" %}" target="_blank">Можно
+                            говорить что угодно, НО
+                            увидеть, это совсем другое</a></li>
+                    </ul>
+                </section>
+            </div>
+        </aside>  <!-- /#sidebar-second -->
 
         </div>
     </div>

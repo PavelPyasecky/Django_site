@@ -243,6 +243,12 @@ body.front .navbar-search {
 	background-color: #ffffff;
 	border: 1px solid #d9d9d9;
     border-top: 1px solid #c0c0c0;
+	padding: 10px;
+}
+
+
+#edit-submitted-file {
+
 }
 
 /* Blinking cursor pour typed.js */
@@ -902,6 +908,7 @@ aside h2 {
 		display: none;
 	}
 
+
 	.mob-divider {
 		border-bottom-color : rgb(215, 215, 215);
 		border-bottom-style : solid;
@@ -1091,3 +1098,18 @@ aside h2 {
 	text-decoration: none;
 	color: #ffffff;
 }
+
+.form-errors {
+	color: #e35720;
+}
+
+#btn-navbar a {
+	background-color: #8ea0b88a;
+	border-bottom-color: #fff;
+	color:#fff;
+	}
+
+#btn-navbar a:hover {
+	background-color: #fff;
+	color:#4285f4;
+	}

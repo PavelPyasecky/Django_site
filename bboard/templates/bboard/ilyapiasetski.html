@@ -1,4 +1,17 @@
 {% extends "layout/basic.html" %}
+{% load static %}
+
+{% block navigation %}
+    <nav role="navigation">
+        <ul class="menu nav navbar-nav">
+            <li class="first leaf"><a href="{% url "seller_page" %}">Продавцу</a>
+            </li>
+            <li class="leaf"><a href="{% url "buyer_page" %}">Покупателю</a></li>
+            <li class="leaf active-trail active" id="btn-navbar"><a href="{% url "ilyapiasetski_page" %}" class="active-trail active">Google Резюме</a></li>
+            <li class="last leaf"><a href="{% url "contact_page" %}">Контакты</a></li>
+        </ul>
+    </nav>
+{% endblock %}
 
 {% block content %}
     <div class="main-container container">
@@ -21,72 +34,32 @@
                                             область). Фото с довольными клиентами.
                                         </div>
                                         <div class="well">
-                                            <h3><a href="ilyapiasetski.html">Фото с довольными клиентами |
-                                                Рекомендации</a></h3>
+                                            <h3 style="font-size: 120% ;">Фото с довольными клиентами |
+                                                Рекомендации</h3>
 
                                             <div class="table">
                                                 <div class="table__cell">
-                                                    <img style="padding-right: 10px;padding-top: 10px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_1.jpg"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_2.JPG"
+                                                    <img style="padding-right: 10px;padding-top: 10px; border: peachpuff; border-width: thin; border-image: {% static "bboard/img/facebook.png" %} 10 round round;"
+                                                         src="{% static "bboard/img/Happy_clients_2.JPG" %}"
                                                          alt=""/>
                                                     <img style="padding-right: 10px;padding-top: 10px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_16.jpg"
+                                                         src="{% static "bboard/img/Happy_clients_4.JPG" %}"
                                                          alt=""/>
                                                     <img style="padding-right: 10px;padding-top: 10px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_17.jpg"
+                                                         src="{% static "bboard/img/Happy_clients_5.jpg" %}"
                                                          alt=""/>
                                                     <img style="padding-right: 10px;padding-top: 10px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_3.JPG"
+                                                         src="{% static "bboard/img/Happy_clients_3.JPG" %}"
                                                          alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_4.jpg"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_5.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_6.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_7.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_8.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_9.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_10.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_11.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_12.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_13.JPG"
-                                                         alt=""/>
-                                                    <img style="padding-right: 10px;padding-top: 20px;"
-                                                         src="../sites/all/themes/bootstrap_material/images/IMG_14.jpg"
-                                                         alt=""/>
+
                                                 </div>
                                             </div>
 
-                                            <div class="well associated-search">
-                                                <h3>Перейти к другой информации</h3>
-                                                <p><a href="buyer.html">Покупателю</a></p>
-                                                <p><a href="seller.html">Продавцу</a></p>
-                                                <p><a href="">Google Резюме</a></p>
-                                            </div>
+
                                             <div class="top-well">
                                                 <h2>Готов приступить к работе, решить вашу задачу.</h2>
                                                 <p>Мы можем поработать вместе?</p>
-                                                <div class="calltoaction"><a href="contact.html">Контакты</a></div>
+                                                <div class="calltoaction"><a href="{% url "contact_page" %}">Контакты</a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -97,10 +70,10 @@
                     </section>
                     <section id="block-block-9" class="block block-block clearfix">
 
-                        <p><a href="contact.html">
+                        <p><a href="{% url "contact_page" %}">
                             <img alt=""
-                                 src="../sites/all/themes/bootstrap_material/images/realtor1.gif"
-                                 style="display:block; height:65px; margin-bottom:30px; margin-left:auto; margin-right:auto; width:296px"/></a>
+                                 src="{% static "bboard/img/moving_house.gif" %}"
+                                 style="display:block; margin-bottom:30px; margin-left:auto; margin-right:auto; width:50%"/></a>
                         </p>
 
                     </section>
@@ -112,7 +85,7 @@
                     <section id="block-block-20" class="block block-block clearfix">
 
                         <p><img class="sidebar-image"
-                                src="../sites/all/themes/bootstrap_material/images/ilya_realt.png"/></p>
+                                src="{% static "bboard/img/ilya_realt_new-removebg-preview_3.jpg" %}"/></p>
 
                     </section>
                     <section id="block-block-16" class="block block-block clearfix">
@@ -124,10 +97,10 @@
                         <p><strong>Процент продажи дороже рынка :</strong> 9,78% (от реальной стоимости недвижимости)
                         </p>
                         <p><strong>Расположение :</strong><a
-                                href="https://www.google.fr/maps/place/Gary+Le+Masson,+consultant+SEO+%26+Google+Analytics+%C3%A0+Paris/@48.8385196,2.3923929,15z/data=!4m2!3m1!1s0x0:0x726c7b84b863f01a?hl=en"
+                                href="https://yandex.by/profile/43136418023"
                                 target="_blank">Площадь Свободы 8, Минск, Беларусь</a></p>
-                        <p><strong>Профессия :</strong>Риэлтер / эксперт рынка недвижимости</p>
-                        <p><strong>Специализация :</strong> <a href="seller.html">Продажа - подбор - обмен жилой
+                        <p><strong>Профессия:</strong> Риэлтер / эксперт рынка недвижимости</p>
+                        <p><strong>Специализация:</strong> <a href="https://zen.yandex.ru/media/id/5f0ac5bee281700c81dedaac/ia-b-v-rieltory-poshela-kto-takoi-rieltor-5f3b84829ed1b63a4bfc77a3"> Продажа - подбор - обмен жилой
                             недвижимости</a></p>
 
                     </section>
@@ -136,10 +109,10 @@
                         <h2 class="block-title">Google Резюме</h2>
 
                         <ul class="menu nav">
-                            <li class="first leaf"><a href="">Опыт</a></li>
-                            <li class="leaf"><a href="">Быстрое реагирование</a></li>
-                            <li class="leaf"><a href="">Прямая выгода</a></li>
-                            <li class="last leaf"><a href="">Работа любой сложности</a></li>
+                            <li class="first leaf">Опыт</li>
+                            <li class="leaf">Быстрое реагирование</li>
+                            <li class="leaf">Прямая выгода</li>
+                            <li class="last leaf">Работа любой сложности</li>
                         </ul>
                     </section>
                 </div>

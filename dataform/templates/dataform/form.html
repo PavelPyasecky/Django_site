@@ -1,0 +1,198 @@
+{% extends "layout/basic.html" %}
+{% load static %}
+
+
+
+
+{% block navigation %}
+    <nav role="navigation">
+        <ul class="menu nav navbar-nav">
+            <li class="first leaf"><a href="{% url "seller_page" %}">Продавцу</a>
+            </li>
+            <li class="leaf"><a href="{% url "buyer_page" %}">Покупателю</a></li>
+            <li class="leaf"><a href="{% url "ilyapiasetski_page" %}">Google Резюме</a></li>
+            <li class="last leaf active-trail active" id="btn-navbar"><a href="{% url "contact_page" %}" class="active-trail active">Контакты</a></li>
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block content %}
+
+    <div class="main-container container">
+
+        <header role="banner" id="page-header"></header> <!-- /#page-header -->
+
+        <div class="row">
+
+            <section class="col-sm-7 section-contenu">
+
+                <a id="main-content"></a>
+                <div class="region region-content">
+                    <section id="block-system-main" class="block block-system clearfix">
+
+                        <article id="node-123" class="node node-webform clearfix">
+                            <div class="field field-name-field-text field-type-text-long field-label-hidden">
+                                <div class="field-items">
+                                    <div class="field-item even">
+                                        <div class="top-well">
+                                            <h3>Дорого продать &amp; Выгодно купить</h3>
+
+                                            <div class="grey-txt">Заполните форму и я вам перезвоню</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% if form_window %}
+                            <form class="webform-client-form webform-client-form-123" id="webform-client-form-123" action="/form/"
+                                  enctype="multipart/form-data" method="post"
+                                  accept-charset="UTF-8">
+                                <div>{% csrf_token %}
+
+                                    <div class="form-item webform-component webform-component-textfield webform-component--name form-group form-item form-item-submitted-name form-type-textfield form-group">
+                                        <label class="control-label" name="username" for={{ form.name.id_for_label }}>Имя
+                                            <span
+                                                    class="form-required"
+                                                    title="This field is required.">*</span></label>
+                                        {{ form.name }}
+                                        {% if error %}
+                                            <div class="form-errors" >{{ error.name }}</div>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="form-item webform-component webform-component-textfield webform-component--name form-group form-item form-item-submitted-name form-type-textfield form-group">
+                                        <label class="control-label" name="useremail" for={{ form.email.id_for_label }}>Email
+                                            <span
+                                                    class="form-required"
+                                                    title="This field is required.">*</span></label>
+                                        {{ form.email }}
+                                        {% if error %}
+                                            <div class="form-errors" >{{ error.email }}</div>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="form-item webform-component webform-component-textfield webform-component--name form-group form-item form-item-submitted-name form-type-textfield form-group">
+                                        <label class="control-label" name="userphone" for={{ form.phone.id_for_label }}>Телефон
+                                            <span
+                                                    class="form-required"
+                                                    title="This field is required.">*</span></label>
+                                        {{ form.phone }}
+                                        {% if error %}
+                                            <div class="form-errors" >{{ error.phone }}</div>
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="form-item webform-component webform-component-textfield webform-component--name form-group form-item form-item-submitted-name form-type-textfield form-group">
+                                        <label class="control-label" name="usermessage" for={{ form.mes.id_for_label }}>Сообщение
+                                            <span
+                                                    class="form-required"
+                                                    title="This field is required.">*</span></label>
+                                        <div class="form-textarea-wrapper resizable">
+                                            {{ form.mes }}
+                                            {% if error %}
+                                                <div class="form-errors">{{ error.mes }}</div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-item webform-component webform-component-textfield webform-component--name form-group form-item form-item-submitted-name form-type-textfield form-group">
+                                        <label class="control-label" name="userfile" for={{ form.image.id_for_label }}>Изображения </label>
+                                        {{ form.image }}
+                                        {% if error %}
+                                            <div class="form-errors" >{{ error.image }}</div>
+                                        {% endif %}
+                                    </div>
+
+
+                                    <input type="hidden" name="details[sid]"/>
+                                    <input type="hidden" name="details[page_num]" value="1"/>
+                                    <input type="hidden" name="details[page_count]" value="1"/>
+                                    <input type="hidden" name="details[finished]" value="0"/>
+                                    <input type="hidden" name="form_build_id"
+                                           value="form-eb_PxLFwI9UKByVXASnnCJbV2szgP2MHCA_XR-KB_2E"/>
+                                    <input type="hidden" name="form_id" value="webform_client_form_123"/>
+                                    <div id="form_result"></div>
+                                    <div class="form-actions">
+                                        <div id="google_recaptcha_webform_client_form_123"></div>
+                                        <button class="webform-submit button-primary btn btn-primary form-submit"
+                                                type="submit" name="op" value="Submit">Отправить
+                                        </button>
+                                        <script type="text/jаvascript" src="bootstrap.js"></script>
+                                    </div>
+
+                                </div>
+                            </form>
+                            {% endif %}
+
+
+                            <div align="center">
+                                {% if image %}
+                                    {% for item in image %}
+                                        <img src="{{ MEDIA_URL }}{{ item.image.url }}">
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+
+                            <div align="center">
+                                {% if alarm %}
+                                    <h3 class="block-title">{{ alarm.0 }}</h3>
+                                    <h3 class="block-title">{{ alarm.1 }}</h3>
+                                {% endif %}
+                            </div>
+
+                            <div align="center">
+                                {% if success %}
+                                    <h3 class="block-title">{{ success }}</h3>
+                                {% endif %}
+                            </div>
+
+                        </article>
+
+                    </section>
+                </div>
+            </section>
+
+            <aside class="col-sm-6 section-side-right" role="complementary">
+                <div class="region region-sidebar-second">
+                    <section id="block-block-20" class="block block-block clearfix">
+
+                        <p><img class="sidebar-image"
+                                src="{% static "bboard/img/ilya_google_1-removebg-preview_01.jpg" %}"/></p>
+
+                    </section>
+                    <section id="block-block-17" class="block block-block clearfix">
+
+                        <h2 class="block-title">Контактная информация</h2>
+
+                        <div id="resultStats">Пясецкий Илья Денисович</div>
+                        <p><strong>Компания:</strong> "ООО Центр Недвижимости "Ситилэнд"</p>
+                        <p><strong>Зона работы:</strong> Минск и Минская область</p>
+                        <p><strong>Адрес:</strong><a href="https://yandex.by/profile/43136418023" target="_blank"> Площадь
+                            Свободы 8, - Минск, Беларусь</a></p>
+                        <p><strong>Телефон:</strong><img alt=""
+                                                         src="{% static "bboard/img/phone3.gif" %}"
+                                                         style="height:30px; margin-top:-3px; width:150px"/></p>
+
+                    </section>
+                    <section id="block-menu-menu-social-networks" class="block block-menu clearfix">
+
+                        <h2 class="block-title">Социальные сети</h2>
+
+                        <ul class="menu nav">
+                            <li class="first leaf"><a href="https://www.linkedin.com/in/илья-пясецкий-0347551bb/"
+                                                      title="Ilya Piasetski - Linkedin" target="_blank">Linkedin</a>
+                            </li>
+                            <li class="leaf"><a href="https://www.facebook.com/realt.classic/" target="_blank">Facebook</a></li>
+                            <li class="leaf"><a href="https://vk.com/id358398208"
+                                                title="Ilya Piasetski - ВКонтакте" target="_blank">ВКонтакте</a></li>
+                            <li class="last leaf"><a href="https://twitter.com/realt_classic"
+                                                     title="Ilya Piasetski - Twitter" target="_blank">Twitter</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </aside>  <!-- /#sidebar-second -->
+
+        </div>
+    </div>
+{% endblock %}
+
