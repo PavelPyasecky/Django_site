@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'g7_l@*lpsz3k+%k!d(#2n)++j@!@93tmtaol&(17_r6w$ny1i6'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bboard.apps.BboardConfig',
-    'main.apps.MainConfig',
     'dataform.apps.DataformConfig',
 ]
 
@@ -126,7 +125,6 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 
 EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.mail.ru')
 EMAIL_PORT = os.getenv('EMAIL_PORT', 465)
