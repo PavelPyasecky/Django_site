@@ -29,11 +29,11 @@ class DataFormView(View):
             mes = context['mes'],
             image = request.FILES.getlist('image')
 
-            attempts = EmailForm.objects.filter(phone=phone, date__gte=timezone.now()).count()
+            attempts = EmailForm.objects.filter(phone=phone[0], date__gte=timezone.now()).count()
             print('Attempts today: ', attempts)
 
             if attempts < 5:
-                data_form = EmailForm.objects.create(name=name, email=email, phone=phone, mes=mes)
+                data_form = EmailForm.objects.create(name=name[0], email=email[0], phone=phone[0], mes=mes[0])
                 for item in image:
                     EmailImage.objects.create(form=data_form, image=item)
 
