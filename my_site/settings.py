@@ -139,4 +139,3 @@ EMAIL_RECEPIENT = os.getenv('EMAIL_RECEPIENT')
 EMAIL_USE_SSL = os.getenv('EMAIL_USE_SSL', True)
 
 django_heroku.settings(locals())
-
